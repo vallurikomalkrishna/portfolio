@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning in Mechanical Engineering - Komal Krishna</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Global styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      font-family: 'Segoe UI', sans-serif; 
+    }
+    section { 
+      padding: 80px 0; 
+      position: relative;
+      overflow: hidden;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--bs-primary);
+    }
+    .section-bg-dots {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-image: radial-gradient(#0d6efd 2px, transparent 2px);
+      background-size: 15px 15px;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    /* Blog post specific styles */
+    .blog-post-hero { 
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff5e9 100%);
+      padding: 120px 0 80px; 
+      position: relative;
+    }
+    .blog-post-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .blog-post-content p {
+      margin-bottom: 1.5rem;
+    }
+    .blog-post-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .blog-post-content ul, .blog-post-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .blog-post-content li {
+      margin-bottom: 0.5rem;
+    }
+    .blog-post-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .blog-post-content blockquote {
+      border-left: 4px solid var(--bs-warning);
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    .blog-author img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+    .blog-tags {
+      margin: 2rem 0;
+    }
+    .blog-tag {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #fff8f1;
+      color: var(--bs-warning);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .blog-tag:hover {
+      background-color: var(--bs-warning);
+      color: white;
+      text-decoration: none;
+    }
+    .share-buttons {
+      margin: 2rem 0;
+    }
+    .share-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .share-buttons a:hover {
+      transform: translateY(-3px);
+    }
+    .related-post {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .related-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-color: rgba(255, 193, 7, 0.3);
+    }
+    .related-post-img {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Komal Krishna</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlog">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarBlog">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Post Hero -->
+  <section class="blog-post-hero">
+    <div class="section-bg-dots" style="top: 20px; right: 20px;"></div>
+    <div class="section-bg-dots" style="bottom: 20px; left: 20px;"></div>
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Machine Learning in Mechanical Engineering</li>
+            </ol>
+          </nav>
+          <span class="badge bg-warning text-dark mb-3">Machine Learning</span>
+          <h1 class="display-4 fw-bold mb-3">Machine Learning in Mechanical Engineering</h1>
+          <h4 class="text-muted mb-4">Optimizing Traditional Manufacturing Processes Like Thread Cutting</h4>
+          <div class="d-flex align-items-center mb-4">
+            <img src="assets/images/KOMAL KRISHNA.png" alt="Komal Krishna" class="rounded-circle me-3" width="50" height="50">
+            <div>
+              <p class="mb-0 fw-bold">Komal Krishna</p>
+              <p class="text-muted mb-0"><i class="far fa-calendar-alt me-2"></i>April 28, 2025 • 8 min read</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Post Content -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="blog-post-content">
+            <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c" class="img-fluid rounded-4 mb-4" alt="Machine Learning in Manufacturing">
+            
+            <p>When I first started my journey in Mechanical Engineering, I was deeply fascinated by machines, materials, and how precision plays a crucial role in manufacturing. But as I explored more, I found myself equally drawn to the potential of technology—especially Machine Learning (ML)—in revolutionizing these conventional processes.</p>
+            
+            <p>During my final year, I had the opportunity to work on a major project that focused on integrating Machine Learning into thread cutting operations. It was an eye-opener that changed the way I saw manufacturing. Traditionally, processes like thread cutting depend heavily on fixed parameters, operator experience, and trial-and-error methods. But what if we could make the system intelligent enough to learn from data and optimize itself? That was the question that drove our project.</p>
+            
+            <h2>Understanding the Problem</h2>
+            
+            <p>Thread cutting requires extreme precision. Factors like tool wear, material hardness, spindle speed, feed rate, and cutting force can greatly affect the final quality. In traditional methods, identifying the optimal combination of these factors involves manual calculations or costly physical trials.</p>
+            
+            <p>We wanted to shift from this guess-based approach to a data-driven model.</p>
+            
+            <h2>How Machine Learning Helped</h2>
+            
+            <p>Using a dataset generated from multiple thread cutting trials, we trained a Machine Learning model (we experimented with different algorithms but focused more on explainability and performance). The idea was to predict output parameters like surface finish and thread accuracy based on the input cutting conditions.</p>
+            
+            <p>We cleaned and processed the data, extracted features, and trained our model to learn patterns between inputs (like cutting speed and tool geometry) and outputs (like thread depth, burr formation, or surface roughness). Over time, our model was able to suggest the most optimal cutting conditions that reduced material waste and improved precision.</p>
+            
+            <div class="row my-5">
+              <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://images.unsplash.com/photo-1581093196277-9f608bb3b1a1" alt="CNC Machine" class="img-fluid rounded-4 shadow">
+                <p class="text-center text-muted mt-2"><small>CNC machine used for thread cutting operations</small></p>
+              </div>
+              <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Data Analysis" class="img-fluid rounded-4 shadow">
+                <p class="text-center text-muted mt-2"><small>Data analysis and model training process</small></p>
+              </div>
+            </div>
+            
+            <h2>Key Benefits Observed</h2>
+            
+            <ul>
+              <li><strong>Improved Efficiency:</strong> ML helped us find optimal cutting conditions faster than manual methods.</li>
+              <li><strong>Predictive Maintenance:</strong> By analyzing tool wear patterns, we could predict when a tool needed replacing—reducing downtime.</li>
+              <li><strong>Higher Accuracy:</strong> The model's predictions helped in achieving better dimensional accuracy with fewer reworks.</li>
+              <li><strong>Scalability:</strong> Once trained, the model could be used for other similar manufacturing processes with minimal changes.</li>
+            </ul>
+            
+            <h2>What I Learned</h2>
+            
+            <p>This project wasn't just about implementing a model; it was about bridging the gap between traditional mechanical engineering and modern computational intelligence. It taught me how powerful ML can be when used to optimize processes that were once entirely manual. It also gave me a new direction for my career—one that combines my mechanical foundation with a growing passion for computer science.</p>
+            
+            <h2>Final Thoughts</h2>
+            
+            <p>As someone coming from a mechanical background, I truly believe that the future of manufacturing lies in interdisciplinary collaboration. Machine Learning isn't here to replace engineers—it's here to empower us to work smarter.</p>
+            
+            <blockquote>
+              If you're a mechanical engineer curious about ML, start small—learn about data, try a few simple models, and most importantly, look at your everyday processes through a data-driven lens. You'll be surprised at how much potential there is waiting to be unlocked.
+            </blockquote>
+            
+            <div class="blog-tags">
+              <h5 class="mb-3">Tags:</h5>
+              <a href="#" class="blog-tag">Machine Learning</a>
+              <a href="#" class="blog-tag">Mechanical Engineering</a>
+              <a href="#" class="blog-tag">Manufacturing</a>
+              <a href="#" class="blog-tag">Thread Cutting</a>
+              <a href="#" class="blog-tag">Data Science</a>
+            </div>
+            
+            <div class="share-buttons">
+              <h5 class="mb-3">Share this article:</h5>
+              <a href="#" class="bg-primary"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="bg-info"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="bg-success"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="bg-danger"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="bg-secondary"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <div class="blog-author">
+              <img src="assets/images/KOMAL KRISHNA.png" alt="Komal Krishna">
+              <div>
+                <h5>About the Author</h5>
+                <p class="mb-2">Komal Krishna is a web developer with a background in mechanical engineering. With experience in both fields, Komal explores the intersection of traditional engineering and modern technologies like machine learning and data science.</p>
+                <div class="d-flex gap-2">
+                  <a href="https://linkedin.com/in/vallurikomalkrishna2003" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
+                  <a href="https://github.com/vallurikomalkrishna" target="_blank" class="btn btn-sm btn-outline-dark"><i class="fab fa-github me-1"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Posts -->
+  <section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-6 fw-bold section-title">Related Articles</h2>
+          <div class="d-flex justify-content-center">
+            <div style="width: 50px; height: 3px; background-color: var(--bs-primary);"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card related-post">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e" class="card-img-top related-post-img" alt="Career Transition">
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">Career</span>
+              <h5 class="card-title">Transitioning from Engineering to Tech</h5>
+              <p class="card-text text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>February 28, 2025</p>
+              <a href="blog-transition.html" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card related-post">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb" class="card-img-top related-post-img" alt="React Development">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Web Development</span>
+              <h5 class="card-title">Why React is a Game Changer</h5>
+              <p class="card-text text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>May 15, 2025</p>
+              <a href="blog-react.html" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <!-- Footer -->
+  <footer class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-4">About Komal Krishna</h5>
+          <p class="text-white-50">I'm a passionate software developer with a strong background in web development and machine learning. I love creating innovative solutions and sharing my knowledge with others.</p>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-4">Quick Links</h5> 
+          <ul class="list-unstyled">
+            <li><a href="index.html#home" class="text-white-50">Home</a></li>
+            <li><a href="index.html#about" class="text-white-50">About</a></li>
+            <li><a href="index.html#skills" class="text-white-50">Skills</a></li> 
+            <li><a href="index.html#projects" class="text-white-50">Projects</a></li>
+            <li><a href="index.html#experience" class="text-white-50">Experience</a></li>
+            <li><a href="blog.html" class="text-white-50">Blog</a></li>
+            <li><a href="index.html#contact" class="text-white-50">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-4">Connect</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/vallurikomalkrishna" target="_blank" class="text-white-50"><i class="fab fa-github me-2"></i>GitHub</a></li>  
+            <li><a href="https://linkedin.com/in/vallurikomalkrishna2003" target="_blank" class="text-white-50"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/krishhhhh_vk/" target="_blank" class="text-white-50"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="text-white-50">&copy; 2025 Komal Krishna. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

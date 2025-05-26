@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transitioning from Engineering to Tech - Komal Krishna</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Global styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
+      font-family: 'Segoe UI', sans-serif; 
+    }
+    section { 
+      padding: 80px 0; 
+      position: relative;
+      overflow: hidden;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--bs-primary);
+    }
+    .section-bg-dots {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-image: radial-gradient(#0d6efd 2px, transparent 2px);
+      background-size: 15px 15px;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    /* Blog post specific styles */
+    .blog-post-hero { 
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9f5ff 100%);
+      padding: 120px 0 80px; 
+      position: relative;
+    }
+    .blog-post-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .blog-post-content p {
+      margin-bottom: 1.5rem;
+    }
+    .blog-post-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .blog-post-content ul, .blog-post-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .blog-post-content li {
+      margin-bottom: 0.5rem;
+    }
+    .blog-post-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .blog-post-content blockquote {
+      border-left: 4px solid var(--bs-primary);
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    .blog-author img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+    .blog-tags {
+      margin: 2rem 0;
+    }
+    .blog-tag {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #f1f8ff;
+      color: var(--bs-primary);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .blog-tag:hover {
+      background-color: var(--bs-primary);
+      color: white;
+      text-decoration: none;
+    }
+    .share-buttons {
+      margin: 2rem 0;
+    }
+    .share-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .share-buttons a:hover {
+      transform: translateY(-3px);
+    }
+    .related-post {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .related-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-color: rgba(13, 110, 253, 0.3);
+    }
+    .related-post-img {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Komal Krishna</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlog">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarBlog">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Post Hero -->
+  <section class="blog-post-hero">
+    <div class="section-bg-dots" style="top: 20px; right: 20px;"></div>
+    <div class="section-bg-dots" style="bottom: 20px; left: 20px;"></div>
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Transitioning from Engineering to Tech</li>
+            </ol>
+          </nav>
+          <span class="badge bg-secondary mb-3">Career</span>
+          <h1 class="display-4 fw-bold mb-3">Transitioning from Engineering to Tech</h1>
+          <div class="d-flex align-items-center mb-4">
+            <img src="assets/images/KOMAL KRISHNA.png" alt="Komal Krishna" class="rounded-circle me-3" width="50" height="50">
+            <div>
+              <p class="mb-0 fw-bold">Komal Krishna</p>
+              <p class="text-muted mb-0"><i class="far fa-calendar-alt me-2"></i>February 28, 2025 • 6 min read</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Post Content -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="blog-post-content">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e" class="img-fluid rounded-4 mb-4" alt="Career Transition">
+            
+            <p>When I started my journey in mechanical engineering, I never imagined I'd one day be building websites and writing code for a living. Like many, I chose engineering with a mix of curiosity and societal expectation. But somewhere along the way, I realized my interests were shifting toward the world of tech — especially web development.</p>
+            
+            <p>During my third year, I started exploring tech-related topics out of pure interest. I built my first basic website and something clicked. It felt good — not just seeing the final output, but also the problem-solving process behind it. Slowly, I found myself spending more time learning HTML, CSS, JavaScript, and even exploring frameworks like React. What started as curiosity turned into a passion.</p>
+            
+            <p>At first, the transition wasn't easy. I had to balance my engineering coursework with self-learning. I had no formal CS background, so I relied on online resources, YouTube, and documentation.</p>
+            
+            <p>My real push into tech came when I got the opportunity to work on the TEDxAnuragU website. One of my lecturers encouraged me to take it up, and that small push made a big impact. I was nervous, but excited — and by the time the website went live, I knew I wanted to do more of this.</p>
+            
+            <p>Shortly after, I joined the IUCEE Student Chapter at Anurag University. That was another milestone in my journey. Working with the chapter exposed me to new challenges and helped me understand the importance of technology in problem-solving. It wasn't just web development anymore — I started getting curious about cloud technologies, deployment, backend systems, and how everything works together.</p>
+            
+            <p>Every small project I worked on added up. I took freelance gigs, built websites for friends, and contributed to events. Eventually, I stareted freelancing, where we developed websites and digital solutions for real clients. Each project brought in new learnings — not just technical, but also communication, client handling, and time management.</p>
+            
+            <p>In this process, I even started working on machine learning projects out of pure interest. From predicting soil fertility to exploring emotion detection using speech, I dove into areas I never thought I’d explore as a mechanical engineering student. These projects helped me understand the practical power of AI and how it can be integrated with real-world applications — especially when combined with web interfaces and cloud services.</p>
+
+            <p>One of the biggest highlights of my journey was my final year major project, where I combined machine learning with manufacturing. We built a solution that integrated ML algorithms to improve predictive analytics in precision machining for thread-cutting operations. The project not only pushed me technically, but it also received great recognition from the department and external reviewers for its innovation and relevance to real-world industry problems.</p>
+
+
+            <h2>What I Learned Along the Way</h2>
+            
+            <ul>
+              <li><strong>Start Before You Feel Ready:</strong> Taking up the TEDx website was a big step, and I'm glad I didn't wait to feel "prepared."</li>
+              <li><strong>Be Consistent:</strong> Self-learning isn't easy, but regular effort pays off.</li>
+              <li><strong>Projects > Theory:</strong> Every real project taught me more than any lecture could.</li>
+              <li><strong>Support Matters:</strong> That one lecturer's and the friend's support played a huge role in shaping my path.</li>
+              <li><strong>Background Isn't a Barrier:</strong> Mechanical engineering taught me logic and discipline — and I carried that mindset into tech.</li>
+            </ul>
+            
+            <p>Today, I'm confident in what I do — whether it's building full-stack web applications, working with cloud platforms, or mentoring others starting out in tech. If you're from a non-CS background and thinking about switching, my advice is: don't wait. Just start. Stay curious, build projects, and you'll be surprised how far you can go.</p>
+            
+            <blockquote>
+              Because sometimes, all it takes is one opportunity… and the rest follows.
+            </blockquote>
+            
+            <div class="blog-tags">
+              <h5 class="mb-3">Tags:</h5>
+              <a href="#" class="blog-tag">Career Change</a>
+              <a href="#" class="blog-tag">Engineering</a>
+              <a href="#" class="blog-tag">Web Development</a>
+              <a href="#" class="blog-tag">Learning</a>
+              <a href="#" class="blog-tag">Personal Growth</a>
+            </div>
+            
+            <div class="share-buttons">
+              <h5 class="mb-3">Share this article:</h5>
+              <a href="#" class="bg-primary"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="bg-info"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="bg-success"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="bg-danger"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="bg-secondary"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <div class="blog-author">
+              <img src="assets/images/KOMAL KRISHNA.png" alt="Komal Krishna">
+              <div>
+                <h5>About the Author</h5>
+                <p class="mb-2">Komal Krishna is a web developer who transitioned from mechanical engineering to tech. With experience in both fields, Komal shares insights about career transitions and the journey of continuous learning in the tech industry.</p>
+                <div class="d-flex gap-2">
+                  <a href="https://linkedin.com/in/vallurikomalkrishna2003" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
+                  <a href="https://github.com/vallurikomalkrishna" target="_blank" class="btn btn-sm btn-outline-dark"><i class="fab fa-github me-1"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Posts -->
+  <section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-6 fw-bold section-title">Related Articles</h2>
+          <div class="d-flex justify-content-center">
+            <div style="width: 50px; height: 3px; background-color: var(--bs-primary);"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card related-post">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb" class="card-img-top related-post-img" alt="React Development">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Web Development</span>
+              <h5 class="card-title">Why React is a Game Changer</h5>
+              <p class="card-text text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>May 15, 2025</p>
+              <a href="blog-react.html" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card related-post">
+            <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c" class="card-img-top related-post-img" alt="Machine Learning">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Machine Learning</span>
+              <h5 class="card-title">Machine Learning in Mechanical Engineering</h5>
+              <p class="card-text text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>April 28, 2025</p>
+              <a href="blog-ml-mechanical.html" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+   
+  <!-- Newsletter -->
+  <section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-6 fw-bold mb-4">Subscribe to My Newsletter</h2>
+          <p class="lead mb-5">Get the latest articles, tutorials, and updates delivered straight to your inbox.</p>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form class="d-flex">
+                <input type="email" class="form-control form-control-lg me-2" placeholder="Your email address">
+                <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+              </form>
+              <p class="text-muted mt-2"><small>I'll never share your email with anyone else.</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-4">About Komal Krishna</h5>
+          <p class="text-white-50">I'm a passionate software developer with a strong background in web development and machine learning. I love creating innovative solutions and sharing my knowledge with others.</p>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html#home" class="text-white-50">Home</a></li>
+            <li><a href="index.html#about" class="text-white-50">About</a></li>
+            <li><a href="index.html#skills" class="text-white-50">Skills</a></li>
+            <li><a href="index.html#projects" class="text-white-50">Projects</a></li>
+            <li><a href="index.html#experience" class="text-white-50">Experience</a></li>
+            <li><a href="blog.html" class="text-white-50">Blog</a></li>
+            <li><a href="index.html#contact" class="text-white-50">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-4">Connect</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/vallurikomalkrishna" target="_blank" class="text-white-50"><i class="fab fa-github me-2"></i>GitHub</a></li>
+            <li><a href="https://linkedin.com/in/vallurikomalkrishna2003" target="_blank" class="text-white-50"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/krishhhhh_vk/" target="_blank" class="text-white-50"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="text-white-50">&copy; 2025 Komal Krishna. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
